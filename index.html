@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="sk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,
+        initial-scale=1.0,
+        user-scalable=no"/>
+    <title>Tetros</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="icons/favicon.ico" type="image/x-icon">
+    <link rel="manifest" href="./manifest.json">
+    <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-status-bar" content="#fff313">
+    <meta name="theme-color" content="#fff313">
+</head>
+
+<body>
+
+<div class="wrapper">
+    <div class="mycanvas">
+        <canvas id="board" class="game" width="240" height="400"></canvas>
+    </div>
+    <div class="mycanvas">
+        <canvas id="helpboard"></canvas>
+    </div>
+
+</div>
+<div class="finished-levels">
+<!--    created based on levels in json-->
+</div>
+<div class="buttons">
+    <button id="next">Začni Hru</button>
+    <button id="level-restart" disabled>Reštart Levelu</button>
+    <button id="tip" disabled>Nápoveda</button>
+    <button id="solution" disabled>Riešenie</button>
+    <button id="restart">Úplný reštart</button>
+</div>
+<div class="rules">
+    <h1>Pravidlá</h1>
+    <div class="game-principles">
+        <h2>Princíp hry</h2>
+        <p>Hra pozostáva z 10 levelov. 5 levelov je ľahkých a 5 levelov je ťažkých. Hra obsahuje aj 12 rôznych farebných
+            dielikov.</p>
+        <p>Každý level má dosku a príslušný počet kúskov dielikov na jej vyplnenie. Počet dielikov záleží od náročnosti
+            levelu.</p>
+        <p>Hráčova úloha je pokúsiť sa farebné dieliky skladačky zložiť tak, aby svetlú plochu hracej plochy úplne
+            zakryli.</p>
+        <p>Každý dielik je možno použiť iba práve raz. Hráč môže dielik ľubovoľné otáčať alebo prevracať.</p>
+        <p> Ak hráč splní svoju úlohu, môže sa presunúť na ďalšiu úlohu.</p>
+<!--        pravidla pre desktop-->
+        <div class="desktop">
+            <h2>Ovládanie</h2>
+            <p>1. Presunutie dieliku pomocou drag and drop na hraciu plochu z ponuky dielikov možných na presun</p>
+            <p>2. Prostredné tláčítko myši nad dielikom slúži na otočenie dieliku (tzv mirror) v ponuke dielikov možných na presun / na hracej ploche</p>
+            <p>3. Pravým tlačítkom myší nad dielikom sa dielik prerotuje o 90 stupňov doľava v ponuke dielikov možných na presun / na hracej ploche</p>
+            <p>4. 5tym tlačítkom myší nad dielikom (typicky "Browser Forward") sa dielik prerotuje o 90 stupňov doprava v ponuke dielikov možných na presun / na hracej ploche</p>
+            <p>5. Ak potiahnete (nechtiac/alebo úmyselne) dielik mimo ponuku dielikov možných na presun / mimo hraciu plochu, tak sa dielik presunie na pôvodné miesto do ponuky </p>
+            <p>6. Na zahodenie dieliku z hracej plochy a presun na pôvodné miesto do ponuky ho dragnite mimo hraciu plochu alebo na neplatnú pozíciu</p>
+            <p>7. Hra vám nedovolí položiť (uvoľniť tlačítko myši) dielik na iné než povolené políčka</p>
+        </div>
+<!--        pravidla pre mobil/touch zariadenie = pre touch otesttovane dorobit-->
+        <div class="mobile">
+            <h2>Ovládanie</h2>
+            <p>1. Vo všeobecnosti posun dielika je po selekovaní dielika, napríklad prstom, a následnom ťahaní</p>
+            <p>2. Posunutím dieliku doľava v ponuke dielikov dielik zmení farbu na hráškovo zelenú a následný dotyk (touch) na ľubovoľné miesto hracej plochy s následným posunom drag and drop po hracej ploche</p>
+            <p>3. Otočenie dieliku (tzv mirror) je možné iba z ponuky dielikov možných na presun a to posunutím vpravo dole</p>
+            <p>4. Otočenie dielika o 90 stupňov doľava je možné iba z ponuky dielikov možných na presun a to posunutím vpravo hore</p>
+            <p>5. Ak potiahnete (nechtiac/alebo úmyselne) dielik mimo hraciu plochu, tak sa dielik presunie na pôvodné miesto do ponuky </p>
+            <p>6. Na zahodenie dieliku z hracej plochy a presun na pôvodné miesto do ponuky ho dragnite mimo hraciu plochu alebo na neplatnú pozíciu</p>
+            <p>7. Hra vám nedovolí položiť (uvoľniť dotyk) dielik na iné než povolené políčka</p>
+        </div>
+    </div>
+</div>
+<div class="modal-bg">
+    <div class="modal-box">
+        <span class="title">Súhrn Objednávky</span>
+        <img class="modal-img" src="" alt="nápoveda/riešenie">
+        <div id="closeBtn">&times;</div>
+    </div>
+</div>
+<script src="app.js"></script>
+<script src="js/desk.js"></script>
+<script src="js/mouse.js"></script>
+<script src="js/gamemap.js"></script>
+<script src="js/piece.js"></script>
+<script src="script.js"></script>
+</body>
+
+</html>
+<!--
+
+Zmeny
+desk.js mam zmeneny v constructore
+v style.css ohladne .mycanvas ad margins
+v deklaraciach som vyhodil zbytocne premenne
+vymenil plno mojich funkcii v script.js /dufam ye tu mam tvoje funkcie a pod ok ...
+v Tvojej casti trosku zmeny kvoli Touch
+... Dalsi level alebo pokracovanie alebo zacatie novej hry
+... uplne restartuje hru a vymaze localstorage
+kedze vzdy 2 listenery by mali rovnake vnutro je to cez pomocne funkcie next() a restart()
+zmenil som velkost tzch dvoch ploch v  function changeResponsive
+doplnil som do textu ovladania
+vyhodil  som touch.js
+
+aj touch aj mys by mali fungovat podla zadania / trosku ymena ovladania touch vid Ovladanie
+-->

@@ -1,0 +1,387 @@
+[
+  {
+    "tip": "./tips/easy1.png",
+    "solution": "./solutions/easy1_r.png",
+    "difficulty":  "easy",
+    "board": [
+      [0, 0, 0, 0, 0, 0],
+      [0, 0, 1, 1, 1, 1],
+      [1, 1, 1, 1, 1, 0],
+      [0, 0, 1, 1, 1, 0],
+      [0, 0, 0, 0, 0, 0]
+    ],
+    "pieces": [ {
+        "tileType":  "K",
+        "tileShift": {
+            "xm":  1,
+            "ym":  4
+        },
+        "tileColor": "#25a6be"
+        }, {
+        "tileType":  "L",
+        "tileShift": {
+          "xm":  1,
+          "ym":  3
+        },
+        "tileColor": "#9C27B0"
+        }, {
+        "tileType":  "C",
+        "tileShift": {
+          "xm":  2,
+          "ym":  2
+        },
+        "tileColor": "#Be2525"
+        }]
+    },
+
+  {
+    "tip": "./tips/easy2.png",
+    "solution": "./solutions/easy2_r.png",
+    "difficulty": "easy",
+    "board": [
+      [0, 0, 0, 0, 0, 0],
+      [0, 1, 1, 1, 0, 0],
+      [0, 1, 1, 1, 0, 0],
+      [0, 1, 1, 1, 1, 0],
+      [1, 1, 1, 1, 0, 0]
+    ],
+    "pieces": [ {
+      "tileType":  "L",
+      "tileShift": {
+        "xm":  1,
+        "ym":  3
+      },
+      "tileColor": "#9C27B0"
+    }, {
+      "tileType":  "K",
+      "tileShift": {
+        "xm":  1,
+        "ym":  4
+      },
+      "tileColor": "#25a6be"
+    }, {
+      "tileType":  "B",
+      "tileShift": {
+        "xm":  1,
+        "ym":  3
+      },
+      "tileColor": "#25be30"
+    }]
+  },
+
+  {
+    "tip": "./tips/easy3.png",
+    "solution": "./solutions/easy3_r.png",
+    "difficulty": "easy",
+    "board": [
+      [0, 0, 0, 0, 0, 0],
+      [0, 1, 1, 1, 1, 0],
+      [0, 1, 1, 1, 1, 0],
+      [0, 1, 1, 1, 0, 0],
+      [1, 1, 1, 0, 0, 0]
+    ],
+    "pieces": [ {
+      "tileType":  "I",
+      "tileShift": {
+        "xm":  1,
+        "ym":  4
+      },
+      "tileColor": "#03A9F4"
+    }, {
+      "tileType":  "K",
+      "tileShift": {
+        "xm":  1,
+        "ym":  4
+      },
+      "tileColor": "#25a6be"
+    }, {
+      "tileType":  "B",
+      "tileShift": {
+        "xm":  1,
+        "ym":  3
+      },
+      "tileColor": "#25be30"
+    }]
+  },
+
+   {
+     "tip": "./tips/easy4.png",
+     "solution": "./solutions/easy4_r.png",
+    "difficulty": "easy",
+    "board": [
+      [0, 0, 0, 0, 0, 0],
+      [0, 1, 1, 1, 1, 0],
+      [0, 1, 1, 1, 1, 0],
+      [0, 1, 1, 1, 0, 0],
+      [0, 0, 0, 0, 0, 0]
+    ],
+    "pieces": [ {
+      "tileType":  "O",
+      "tileShift": {
+        "xm":  2,
+        "ym":  2
+      },
+      "tileColor": "#FFC107"
+    }, {
+      "tileType":  "L",
+      "tileShift": {
+        "xm":  1,
+        "ym":  3
+      },
+      "tileColor": "#9C27B0"
+    }, {
+      "tileType":  "SI",
+      "tileShift": {
+        "xm":  1,
+        "ym":  3
+      },
+      "tileColor": "#3F51B5"
+    }]
+  },
+
+  {
+    "tip": "./tips/easy5.png",
+    "solution": "./solutions/easy5_r.png",
+    "difficulty": "easy",
+    "board": [
+      [0, 0, 0, 0, 0, 0],
+      [0, 1, 1, 1, 0, 0],
+      [0, 1, 1, 1, 1, 0],
+      [0, 1, 1, 1, 1, 0],
+      [0, 1, 0, 0, 1, 0]
+    ],
+    "pieces": [ {
+      "tileType":  "K",
+      "tileShift": {
+        "xm":  1,
+        "ym":  4
+      },
+      "tileColor": "#25a6be"
+    }, {
+      "tileType":  "SI",
+      "tileShift": {
+        "xm":  1,
+        "ym":  3
+      },
+      "tileColor": "#3F51B5"
+    }, {
+      "tileType":  "B",
+      "tileShift": {
+        "xm":  1,
+        "ym":  3
+      },
+      "tileColor": "#25be30"
+    }]
+  },
+
+  {
+    "tip": "./tips/hard1.png",
+    "solution": "./solutions/hard1_r.png",
+    "difficulty": "hard",
+    "board": [
+      [0, 0, 0, 1, 1, 0],
+      [0, 1, 1, 1, 1, 0],
+      [0, 1, 1, 1, 1, 0],
+      [0, 1, 1, 1, 1, 0],
+      [0, 1, 1, 0, 0, 0]
+    ],
+    "pieces": [ {
+      "tileType":  "I",
+      "tileShift": {
+        "xm":  1,
+        "ym":  4
+      },
+      "tileColor": "#03A9F4"
+    }, {
+      "tileType":  "T",
+      "tileShift": {
+        "xm":  1,
+        "ym":  3
+      },
+      "tileColor": "#00BCD4"
+    }, {
+      "tileType":  "BL",
+      "tileShift": {
+        "xm":  1,
+        "ym":  4
+      },
+      "tileColor": "#Be8025"
+    }, {
+      "tileType":  "SI",
+      "tileShift": {
+        "xm":  1,
+        "ym":  3
+      },
+      "tileColor": "#3F51B5"
+    }]
+  },
+
+  {
+    "tip": "./tips/hard2.png",
+    "solution": "./solutions/hard2_r.png",
+    "difficulty": "hard",
+    "board": [
+      [1, 1, 0, 0, 0, 0],
+      [1, 1, 0, 0, 0, 0],
+      [1, 1, 1, 1, 1, 0],
+      [1, 1, 1, 1, 1, 0],
+      [1, 1, 1, 0, 0, 0]
+    ],
+    "pieces": [ {
+      "tileType":  "S",
+      "tileShift": {
+        "xm":  1,
+        "ym":  3
+      },
+      "tileColor": "#E91E63"
+    }, {
+      "tileType":  "B",
+      "tileShift": {
+        "xm":  1,
+        "ym":  3
+      },
+      "tileColor": "#25be30"
+    }, {
+      "tileType":  "O",
+      "tileShift": {
+        "xm":  2,
+        "ym":  2
+      },
+      "tileColor": "#FFC107"
+    }, {
+      "tileType":  "L",
+      "tileShift": {
+        "xm":  1,
+        "ym":  3
+      },
+      "tileColor": "#9C27B0"
+    }]
+  },
+
+  {
+    "tip": "./tips/hard3.png",
+    "solution": "./solutions/hard3_r.png",
+    "difficulty": "hard",
+    "board": [
+      [0, 0, 0, 0, 0, 0],
+      [0, 0, 1, 1, 1, 0],
+      [0, 0, 1, 1, 1, 1],
+      [1, 1, 1, 1, 1, 0],
+      [1, 1, 1, 0, 0, 0]
+    ],
+    "pieces": [ {
+      "tileType":  "L",
+      "tileShift": {
+        "xm":  1,
+        "ym":  3
+      },
+      "tileColor": "#9C27B0"
+    }, {
+      "tileType":  "I",
+      "tileShift": {
+        "xm":  1,
+        "ym":  4
+      },
+      "tileColor": "#03A9F4"
+    }, {
+      "tileType":  "O",
+      "tileShift": {
+        "xm":  2,
+        "ym":  2
+      },
+      "tileColor": "#FFC107"
+    }, {
+      "tileType":  "C",
+      "tileShift": {
+        "xm":  2,
+        "ym":  2
+      },
+      "tileColor": "#Be2525"
+    }]
+  },
+
+  {
+    "tip": "./tips/hard4.png",
+    "solution": "./solutions/hard4_r.png",
+    "difficulty": "hard",
+    "board": [
+      [0, 1, 1, 0, 0, 1],
+      [0, 1, 1, 1, 1, 1],
+      [0, 1, 1, 1, 1, 1],
+      [0, 1, 1, 0, 1, 0],
+      [0, 0, 0, 0, 0, 0]
+    ],
+    "pieces": [ {
+      "tileType":  "SI",
+      "tileShift": {
+        "xm":  1,
+        "ym":  3
+      },
+      "tileColor": "#3F51B5"
+    }, {
+      "tileType":  "T",
+      "tileShift": {
+        "xm":  1,
+        "ym":  3
+      },
+      "tileColor": "#00BCD4"
+    }, {
+      "tileType":  "B",
+      "tileShift": {
+        "xm":  1,
+        "ym":  3
+      },
+      "tileColor": "#25be30"
+    }, {
+      "tileType":  "O",
+      "tileShift": {
+        "xm":  2,
+        "ym":  2
+      },
+      "tileColor": "#FFC107"
+    }]
+  },
+
+  {
+    "tip": "./tips/hard5.png",
+    "solution": "./solutions/hard5_r.png",
+    "difficulty": "hard",
+    "board": [
+      [0, 0, 1, 1, 0, 0],
+      [0, 1, 1, 1, 0, 0],
+      [0, 1, 1, 1, 1, 1],
+      [0, 1, 1, 1, 1, 1],
+      [0, 0, 0, 0, 0, 0]
+    ],
+    "pieces": [ {
+      "tileType":  "S",
+      "tileShift": {
+        "xm":  1,
+        "ym":  3
+      },
+      "tileColor": "#E91E63"
+    }, {
+      "tileType":  "O",
+      "tileShift": {
+        "xm":  2,
+        "ym":  2
+      },
+      "tileColor": "#FFC107"
+    }, {
+      "tileType":  "SI",
+      "tileShift": {
+        "xm":  1,
+        "ym":  3
+      },
+      "tileColor": "#3F51B5"
+    }, {
+      "tileType":  "L",
+      "tileShift": {
+        "xm":  1,
+        "ym":  3
+      },
+      "tileColor": "#9C27B0"
+    }]
+  }
+
+]
