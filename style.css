@@ -83,6 +83,12 @@ button {
     padding: 1rem 1.3rem;
 }
 
+.buttons button:focus:enabled {
+    background-color: green;
+    color: #ffffff;
+    padding: 1rem 1.3rem;
+}
+
 button:disabled,
 button[disabled]{
     border: 1px solid #999999;

@@ -583,7 +583,7 @@ window.onload = function () {
 
         // pozrie sa do localstorage ci je hra zapnuta, ak nie tak sa zoberu levely z jsonu
         function updateLevels() {
-            if (localStorage.length !== 0) {
+            if (localStorage.getItem("easyLevels") !== null && localStorage.getItem("hardLevels") !== null) {
                 easyLevels = JSON.parse(localStorage.getItem("easyLevels"));
                 hardLevels = JSON.parse(localStorage.getItem("hardLevels"));
                 currentLevel = localStorage.getItem("finished-levels");
