@@ -611,8 +611,9 @@ window.onload = function () {
             title.innerText = text;
             if (document.documentElement.offsetHeight > document.documentElement.offsetWidth) {
                 modalBox.style.width = "80%";
+            } else {
+                modalBox.style.width = "40%";
             }
-
             let newPath;
             if (helpType === "tip") {
                 newPath = currLevel.tip
