@@ -33,6 +33,7 @@
 
 .finished-levels {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
@@ -59,6 +60,8 @@
 
 .buttons {
     display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
     justify-content: space-around;
     align-items: center;
     margin: 1rem;
