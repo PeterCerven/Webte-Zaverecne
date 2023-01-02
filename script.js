@@ -12,13 +12,14 @@ window.onload = function () {
         let finishedLevelsContainer = document.querySelector(".finished-levels");
         let easyLevelsLength;
         let hardLevelsLength;
-        let currentLevel = 0;
+        let currentLevelCount = 0;
         let easyLevels = [];
         let hardLevels = [];
         let blockSizeX;
         let blockSizeY;
         let blockSize2X;
         let blockSize2Y;
+        let currLevel;
         const respLow = window.matchMedia("(max-width: 420px)");
         const respHigh = window.matchMedia("(min-width: 600px)");
         respLow.addEventListener("change", function () {
@@ -466,10 +467,10 @@ window.onload = function () {
                 localStorage.removeItem("level-index");
             }
             if (nextBtn.innerText === "Ďalšia úloha") {
-                console.log(currentLevel);
-                finishedLevels[currentLevel].style.background = "green";
-                currentLevel++;
-                localStorage.setItem("finished-levels", currentLevel.toString());
+                console.log(currentLevelCount);
+                finishedLevels[currentLevelCount].style.background = "green";
+                currentLevelCount++;
+                localStorage.setItem("finished-levels", currentLevelCount.toString());
                 if (easyLevels.length !== 0) {
                     easyLevels.splice(currIndexLvl, 1);
                 } else if (hardLevels.length !== 0) {
@@ -499,12 +500,12 @@ window.onload = function () {
             nextBtn.innerText = "Začni Hru";
             nextBtn.disabled = false;
 
-            currentLevel = 0;
+            currentLevelCount = 0;
             easyLevels = sortedLevels.slice(0, easyLevelsLength);
             hardLevels = data.slice(easyLevelsLength, sortedLevels.length);
 
             localStorage.clear();
-            localStorage.setItem("finished-levels", currentLevel.toString());
+            localStorage.setItem("finished-levels", currentLevelCount.toString());
             localStorage.setItem("easyLevels", JSON.stringify(easyLevels));
             localStorage.setItem("hardLevels", JSON.stringify(hardLevels));
 
@@ -517,7 +518,8 @@ window.onload = function () {
             let storageIndex = localStorage.getItem("level-index");
             if (easyLevels.length !== 0) {
                 currIndexLvl = storageIndex ? parseInt(storageIndex) : Math.floor(Math.random() * easyLevels.length);
-                initGameBoard(easyLevels[currIndexLvl].board, easyLevels[currIndexLvl].pieces);
+                currLevel = easyLevels[currIndexLvl];
+                initGameBoard(currLevel.board, currLevel.pieces);
 
                 // localStorage.setItem("easyLevels", JSON.stringify(easyLevels));
                 if (easyLevels.length === 0) {
@@ -527,9 +529,8 @@ window.onload = function () {
                 localStorage.setItem("level-index", currIndexLvl.toString());
             } else if (hardLevels.length !== 0) {
                 currIndexLvl = storageIndex ? parseInt(storageIndex) : Math.floor(Math.random() * hardLevels.length);
-                initGameBoard(hardLevels[currIndexLvl].board, hardLevels[currIndexLvl].pieces);
-
-                // localStorage.setItem("hardLevels", JSON.stringify(hardLevels));
+                currLevel = hardLevels[currIndexLvl];
+                initGameBoard(currLevel.board, currLevel.pieces);
                 localStorage.setItem("level-index", currIndexLvl.toString());
             } else {
                 alert("Gratulujeme, vyhrali ste hru!");
@@ -549,8 +550,8 @@ window.onload = function () {
         }
 
         function updateFinishedLevels() {
-            currentLevel = localStorage.getItem("finished-levels") ? localStorage.getItem("finished-levels") : 0;
-            for (let i = 0; i < currentLevel; i++) {
+            currentLevelCount = localStorage.getItem("finished-levels") ? localStorage.getItem("finished-levels") : 0;
+            for (let i = 0; i < currentLevelCount; i++) {
                 finishedLevels[i].style.background = "green";
             }
         }
@@ -586,7 +587,7 @@ window.onload = function () {
             if (localStorage.getItem("easyLevels") !== null && localStorage.getItem("hardLevels") !== null) {
                 easyLevels = JSON.parse(localStorage.getItem("easyLevels"));
                 hardLevels = JSON.parse(localStorage.getItem("hardLevels"));
-                currentLevel = localStorage.getItem("finished-levels");
+                currentLevelCount = localStorage.getItem("finished-levels") ? localStorage.getItem("finished-levels") : 0;
                 if (easyLevelsLength !== easyLevels.length) {
                     nextBtn.innerText = "Pokračovať";
                 }
@@ -603,20 +604,20 @@ window.onload = function () {
             let modal = document.querySelector(".modal-bg");
             let title = document.querySelector(".title");
             let img = document.querySelector(".modal-img");
+            let modalBox = document.querySelector(".modal-box");
 
             modal.style.display = "flex";
             modal.style.height = document.documentElement.offsetHeight + "px";
             title.innerText = text;
+            if (document.documentElement.offsetHeight > document.documentElement.offsetWidth) {
+                modalBox.style.width = "80%";
+            }
 
             let newPath;
-            if (easyLevels.length === 0 && helpType === "tip") {
-                newPath = sortedLevels[currentLevel].tip
-            } else if (easyLevels.length === 0 && helpType === "solution") {
-                newPath = sortedLevels[currentLevel].solution
-            } else if (helpType === "tip") {
-                newPath = sortedLevels[currentLevel].tip;
+            if (helpType === "tip") {
+                newPath = currLevel.tip
             } else if (helpType === "solution") {
-                newPath = sortedLevels[currentLevel].solution;
+                newPath = currLevel.solution
             }
             img.src = newPath;
         }
