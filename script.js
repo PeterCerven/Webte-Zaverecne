@@ -266,24 +266,7 @@ window.onload = function () {
             e.preventDefault()
         })
         canvas.addEventListener('touchend', function () {
-            if (drag) {
-                drag = false;
-                if (mapMatrix[j].isChangePieceToMap(activePiece, 1, 10, activePiece.shiftX, activePiece.shiftY)) {
-                    draw(activePiece, null);
-                    pieceMatrix.push(activePiece);
-                    mapMatrix[j].changePieceToMap(activePiece, 1);
-                } else {                                //vraciam sa do  vyberu
-                    activePiece.setShift(activePiece.x, activePiece.y);
-                    pieceMatrixH.push(activePiece);
-                    draw(null, null);
-                }
-                inH = false;
-                if (mapMatrix[j].isFinishedMap()) {
-                    nextBtn.disabled = false;
-                }
-
-            }
-            drag = false;
+            upProcedure();
         })
         /*
           end  ad touch
@@ -317,22 +300,7 @@ window.onload = function () {
         })
         canvas.addEventListener('mouseup', function (e) {
             if (e.button === 0) {
-                if (drag) {
-                    drag = false;
-                    if (mapMatrix[j].isChangePieceToMap(activePiece, 1, 10, activePiece.shiftX, activePiece.shiftY)) {
-                        draw(activePiece, null);
-                        pieceMatrix.push(activePiece);
-                        mapMatrix[j].changePieceToMap(activePiece, 1);
-                    } else {                                //vraciam sa do  vyberu
-                        activePiece.setShift(activePiece.x, activePiece.y);
-                        pieceMatrixH.push(activePiece);
-                        draw(null, null);
-                    }
-                    inH = false;
-                    if (mapMatrix[j].isFinishedMap()) {
-                        nextBtn.disabled = false;
-                    }
-                }
+                upProcedure();
             }
         })
 
@@ -431,6 +399,25 @@ window.onload = function () {
         document.getElementById("level-restart").addEventListener("click", function () {
             restartLevel();
         });
+
+        function upProcedure(){
+            if (drag) {
+                drag = false;
+                if (mapMatrix[j].isChangePieceToMap(activePiece, 1, 10, activePiece.shiftX, activePiece.shiftY)) {
+                    draw(activePiece, null);
+                    pieceMatrix.push(activePiece);
+                    mapMatrix[j].changePieceToMap(activePiece, 1);
+                } else {                                //vraciam sa do  vyberu
+                    activePiece.setShift(activePiece.x, activePiece.y);
+                    pieceMatrixH.push(activePiece);
+                    draw(null, null);
+                }
+                inH = false;
+                if (mapMatrix[j].isFinishedMap()) {
+                    nextBtn.disabled = false;
+                }
+            }
+        }
 
 
         function restartLevel() {
@@ -610,7 +597,7 @@ window.onload = function () {
             modal.style.height = document.documentElement.offsetHeight + "px";
             title.innerText = text;
             if (document.documentElement.offsetHeight > document.documentElement.offsetWidth) {
-                modalBox.style.width = "80%";
+                modalBox.style.width = "70%";
             } else {
                 modalBox.style.width = "40%";
             }
@@ -685,6 +672,21 @@ window.onload = function () {
             helpcontext.scale(blockSize2X, blockSize2Y);
             draw(null, null);
         }
+
+
+        function handleMotionEvent(event) {
+
+            const x = event.accelerationIncludingGravity.x;
+            const y = event.accelerationIncludingGravity.y;
+            const z = event.accelerationIncludingGravity.z;
+
+            console.log(x, y, z);
+
+            // Do something awesome.
+        }
+
+        window.addEventListener("devicemotion", handleMotionEvent, true);
+
     });
 }
 
