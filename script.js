@@ -486,6 +486,9 @@ window.onload = function () {
             }
             nextBtn.innerText = "Začni Hru";
             nextBtn.disabled = false;
+            document.getElementById("tip").disabled = true;
+            document.getElementById("solution").disabled = true;
+            document.getElementById("level-restart").disabled = true;
 
             currentLevelCount = 0;
             easyLevels = sortedLevels.slice(0, easyLevelsLength);
@@ -676,11 +679,15 @@ window.onload = function () {
 
         function handleMotionEvent(event) {
 
-            const x = event.accelerationIncludingGravity.x;
-            const y = event.accelerationIncludingGravity.y;
-            const z = event.accelerationIncludingGravity.z;
+            let x = event.accelerationIncludingGravity.x;
+            let y = event.accelerationIncludingGravity.y;
+            let z = event.accelerationIncludingGravity.z;
 
-            console.log(x, y, z);
+
+            if (Math.abs(x) > 50 || Math.abs(y) > 50 || Math.abs(z) > 50) {
+                console.log("parada");
+                restartLevel();
+            }
 
             // Do something awesome.
         }
