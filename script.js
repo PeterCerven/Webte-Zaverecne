@@ -56,6 +56,7 @@ window.onload = function () {
         function distinguishDevice() {
             if (navigator.userAgent.includes("Mobile")) {
                 document.querySelector(".desktop").style.display = "none";
+                document.getElementById("level-restart").style.display = "none";
             } else {
                 document.querySelector(".mobile").style.display = "none";
             }
@@ -683,13 +684,10 @@ window.onload = function () {
             let y = event.accelerationIncludingGravity.y;
             let z = event.accelerationIncludingGravity.z;
 
-
             if (Math.abs(x) > 50 || Math.abs(y) > 50 || Math.abs(z) > 50) {
-                console.log("parada");
                 restartLevel();
             }
 
-            // Do something awesome.
         }
 
         window.addEventListener("devicemotion", handleMotionEvent, true);
