@@ -684,7 +684,7 @@ window.onload = function () {
             let y = event.accelerationIncludingGravity.y;
             let z = event.accelerationIncludingGravity.z;
 
-            if (Math.abs(x) > 65 || Math.abs(y) > 65 || Math.abs(z) > 65) {
+            if (Math.abs(x) > 50 || Math.abs(y) > 50 || Math.abs(z) > 50) {
                 restartLevel();
             }
 
