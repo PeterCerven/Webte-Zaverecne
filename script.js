@@ -600,8 +600,8 @@ window.onload = function () {
             modal.style.display = "flex";
             modal.style.height = document.documentElement.offsetHeight + "px";
             title.innerText = text;
-            if (document.documentElement.offsetHeight > document.documentElement.offsetWidth) {
-                modalBox.style.width = "70%";
+            if (document.documentElement.offsetHeight > 400 + document.documentElement.offsetWidth) {
+                modalBox.style.width = "80%";
             } else {
                 modalBox.style.width = "40%";
             }
